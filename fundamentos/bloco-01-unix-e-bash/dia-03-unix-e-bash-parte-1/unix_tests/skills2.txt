@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+HTML
+VSS
+NODE.JS
+JavaScript
+Ruby
