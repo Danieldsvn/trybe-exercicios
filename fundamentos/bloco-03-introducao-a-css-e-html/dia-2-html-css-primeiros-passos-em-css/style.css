@@ -1,0 +1,41 @@
+body {
+    font-size: 16px;
+    
+}             
+
+h1 {
+    font-family: sans-serif;
+    font-size: 65px;
+    color: orange;
+    text-decoration: underline;
+    
+    
+    
+}
+ul {
+    color: darkgreen
+}
+.p-and-ul {
+    background-color: whitesmoke;
+}
+p {
+    font-style: oblique;
+    font-size: 3em;
+    font-weight:600;
+    line-height: 50px;
+                     
+   
+}
+#red {
+    background-color: red;
+}
+#yellow {
+    background-color: yellow;
+}
+#brown {
+    background-color: brown;
+}
+#pink {
+    text-decoration: line-through;
+    background-color: pink;
+}
