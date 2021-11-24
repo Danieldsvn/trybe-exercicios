@@ -1,0 +1,8 @@
+ol {
+  background-color: yellow;
+}
+ol li:nth-last-of-type(even) {
+  color: green;
+}
+ol li:nth-last-of-type(odd) {
+text-transform: uppercase;}
