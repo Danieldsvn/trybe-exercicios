@@ -33,3 +33,6 @@ div:nth-of-type(4) > h3 {
 div:nth-of-type(5) > h3 {
   color: brown;
 }
+h3:nth-of-type(odd) {
+  font-style: italic;
+}
