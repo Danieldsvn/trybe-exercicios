@@ -5,4 +5,14 @@ ol li:nth-last-of-type(even) {
   color: green;
 }
 ol li:nth-last-of-type(odd) {
-text-transform: uppercase;}
+text-transform: uppercase;
+}
+
+h1, h2  {
+  color: red;
+}
+
+h1 em, h2 em {
+  font-size: 40px;
+  border: 1px black solid;
+}
