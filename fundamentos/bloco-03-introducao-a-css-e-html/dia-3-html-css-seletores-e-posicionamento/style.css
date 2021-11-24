@@ -30,6 +30,11 @@ ul li:nth-child(-n + 3) {
 .pink-bg {
   background-color: pink;
 }
+
+ul li a:hover {
+  font-weight: bold;
+  color: green;
+}
   
   
 
