@@ -72,7 +72,7 @@ else {
  Faça um programa que, dado um valor definido numa constante, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.*/
 
  //Solução:
- const a = -3;
+/*  const a = -3;
  if (a > 0) {
      console.log("positive");
  }
@@ -81,4 +81,25 @@ else {
 }
 else {
     console.log("zero");
+} */
+
+/*Exercicio 5
+ Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.*/
+
+ //Solução:
+ const a = 90;
+ const b = 45;
+ const c = 45;
+ if (a > 0 && b > 0 && c > 0) {
+
+    if (a + b + c == 180) {
+        console.log("true");
+        
+    }
+    else {
+        console.log("false");
+    }
+} 
+else {
+    console.log("erro");
 }
