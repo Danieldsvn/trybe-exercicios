@@ -27,11 +27,45 @@ else {
     console.log(b + " é o maior número");
 } */
 
-const a = 20;
-const b = 21;
+/*Exercicio 3
+ Faça um programa que retorne o maior de três números. Defina no começo do programa três constantes com os valores que serão comparados.
+ */
 
-if (a > b) {
-  console.log("'a' é maior que 'b'");
-} else {
-  console.log("'b' é maior que 'a'");
-};
+ //solução 1
+ /* const a = 65;
+ const b = 70;
+ const c = 68;
+
+ if (a > b) {
+     if (a > c) {
+         console.log(a + " é o maior número");
+     }
+     else {
+         console.log(c + " é o maior número");
+     }     
+ }
+ else {
+     if (b > c) {
+         console.log(b + " é o maior número");
+     }
+     else {
+         console.log(c + " é o maior número");
+     }
+ } */
+ //Solução 2:
+ 
+ /* const a = 9;
+ const b = 5;
+ const c = 3;
+
+ if (a > b && a > c) {
+     console.log(a + " é o maior número")
+ }
+ else if (b > a && b > c) {
+    console.log(b + " é o maior número");
+ }
+ else{
+    console.log(c + " é o maior número");
+ }  */
+
+ /*Exer
