@@ -119,18 +119,50 @@ console.log(max);
 
 
 //*Solução 1
-let array25 = [];
+/* let array25 = [];
 for (let i = 1; i <= 25; i += 1) {
     array25.push(i);
 }
-console.log(array25);
+console.log(array25); */
 //*Solução 2
 
 // ! 9 - Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2 .
 
 
 //*Solução 1
-for (let j = 0; j < array25.length; j += 1) {
+/* for (let j = 0; j < array25.length; j += 1) {
     console.log(array25[j] / 2);
-}
+} */
 //*Solução 2
+
+// ! Bonus 1 - Ordene o array numbers em ordem crescente e imprima seus valores;
+
+/* let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+ */
+//*Solução
+/* for (let index = 1; index < numbers.length; index += 1) {
+    for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+      if (numbers[index] < numbers[secondIndex]) {
+        let position = numbers[index];
+        numbers[index] = numbers[secondIndex];
+        numbers[secondIndex] = position;
+      }
+    }
+  }
+console.log(numbers);   */
+
+// ! Bonus 2 - Ordene o array numbers em ordem decrescente e imprima seus valores;
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+//*Solução
+for (let index = 1; index < numbers.length; index += 1) {
+    for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+      if (numbers[index] > numbers[secondIndex]) {
+        let position = numbers[index];
+        numbers[index] = numbers[secondIndex];
+        numbers[secondIndex] = position;
+      }
+    }
+  }
+console.log(numbers);  
