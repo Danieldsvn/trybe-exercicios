@@ -247,12 +247,12 @@ Dica: que tal identificar as alíquotas com variáveis de nomes explicativos? .*
 
 const sBruto = 3000;
 // validando valor de entrada
-if (salarioBruto <= 0) {
+if (sBruto <= 0) {
     console.log("Valor inválido.")
 }
 // calculando salario base(após INSS)
 else {
-    const sBase = sBruto;    
+    let sBase = sBruto;    
     if (sBruto <= 1556.94) {
         sBase = sBase * 0.92;
     }
@@ -266,19 +266,20 @@ else {
         sBase = sBase - 570.88;
     }
     //calculando salario liquido(após IR)
-    const sLiquido = sBase;
+    let sLiquido = sBase;
     if (sBase >= 1903.99 && sBase <= 2826.65) {
         sLiquido = sLiquido - (sLiquido * 0.075 - 142.80);
     }
     else if (sBase >= 2826.66 && sBase <= 3751.05) {
         sLiquido = sLiquido - (sLiquido * 0.15 - 354.80);
     }
-    /* PRECISA EDITAR VALORES else if (sBase >= 1903.99 && sBase <= 2826.65) {
-        sLiquido = sLiquido - (sLiquido * 0.075 - 142.80);
+    else if (sBase >= 3751.06 && sBase <= 4664.68) {
+        sLiquido = sLiquido - (sLiquido * 0.225 - 636.13);
     }
-    if (sBase >= 1903.99 && sBase <= 2826.65) {
-        sLiquido = sLiquido - (sLiquido * 0.075 - 142.80); */
+    else {
+        sLiquido = sLiquido - (sLiquido * 0.275 - 869.36);
     }
+    console.log("Salário líquido: " + sLiquido );
 }
     
     
