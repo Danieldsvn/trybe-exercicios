@@ -87,7 +87,7 @@ else {
  Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.*/
 
  //Solução:
- const a = 90;
+ /* const a = 90;
  const b = 45;
  const c = 45;
  if (a > 0 && b > 0 && c > 0) {
@@ -102,4 +102,35 @@ else {
 } 
 else {
     console.log("erro");
+} */
+/*Exercicio 6
+ Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
+Como desafio, faça o programa funcionar tanto se receber o nome de uma peça com letras maiúsculas quanto com letras minúsculas, sem aumentar a quantidade de condicionais.
+Como dica, você pode pesquisar uma função que faz uma string ficar com todas as letras minúsculas (lower case) .
+Se a peça passada for inválida, o programa deve retornar uma mensagem de erro.
+Exemplo: bishop (bispo) -> diagonals (diagonais).*/
+
+ //Solução:
+chessPieceAnyCase = "KNIGHT";
+chessPiece = chessPieceAnyCase.toLowerCase();
+ if (chessPiece == "pawn") {
+     console.log("vertically forward one square");
+ }
+ else if (chessPiece == "bishop") {
+    console.log("diagonally any number of squares");
+}
+else if (chessPiece == "rook") {
+    console.log("horizontally or vertically any number of squares");
+}
+else if (chessPiece == "knight") {
+    console.log("in an ‘L’ shape’: two squares in a horizontal or vertical direction, then move one square horizontally or vertically");
+}
+else if (chessPiece == "queen") {
+    console.log("diagonally, horizontally, or vertically any number of squares");
+}
+else if (chessPiece == "king") {
+    console.log("one square in any direction, so long as that square is not attacked by an enemy piece. Additionally, kings are able to make a special move, known as castling.");
+}
+else {
+    console.log("Erro: peça inválida")
 }
