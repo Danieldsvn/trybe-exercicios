@@ -125,3 +125,12 @@ for (let i = 1; i <= 25; i += 1) {
 }
 console.log(array25);
 //*Solução 2
+
+// ! 9 - Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2 .
+
+
+//*Solução 1
+for (let j = 0; j < array25.length; j += 1) {
+    console.log(array25[j] / 2);
+}
+//*Solução 2
