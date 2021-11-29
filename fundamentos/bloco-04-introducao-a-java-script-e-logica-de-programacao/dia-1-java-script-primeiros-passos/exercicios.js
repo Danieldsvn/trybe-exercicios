@@ -245,7 +245,7 @@ O último cálculo para conseguir o salário líquido é R$ 2.670,00 - R$ 57,45 
 Resultado: R$ 2.612,55.
 Dica: que tal identificar as alíquotas com variáveis de nomes explicativos? .*/
 
-const sBruto = 3000;
+let sBruto = 1800;
 // validando valor de entrada
 if (sBruto <= 0) {
     console.log("Valor inválido.")
@@ -267,7 +267,10 @@ else {
     }
     //calculando salario liquido(após IR)
     let sLiquido = sBase;
-    if (sBase >= 1903.99 && sBase <= 2826.65) {
+    if (sBase <= 1903.98) {
+        sLiquido = sLiquido;
+    }
+    else if (sBase >= 1903.99 && sBase <= 2826.65) {
         sLiquido = sLiquido - (sLiquido * 0.075 - 142.80);
     }
     else if (sBase >= 2826.66 && sBase <= 3751.05) {
