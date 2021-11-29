@@ -144,7 +144,7 @@ Porcentagem >= 50 -> E
 Porcentagem < 50 -> F
 O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.*/
 
-let porcentagem = -1;
+/* let porcentagem = -1;
 
 if ( porcentagem >= 90 && porcentagem <= 100) {
     console.log("A");
@@ -167,6 +167,19 @@ else if (porcentagem >= 0 && porcentagem < 50) {
 else {
     console.log("Valor inválido. Fechando programa...")
 }
+ */
 
+/*Exercicio 8
+Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+Bonus: use somente um if .*/
 
+const a = 1;
+const b = 3;
+const c = 5;
 
+let isEven = false;
+
+if (a % 2 == 0 || b % 2 == 0 || c % 2 == 0) {
+    isEven = true;
+}
+console.log(isEven);
