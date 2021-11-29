@@ -173,7 +173,7 @@ else {
 Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
 Bonus: use somente um if .*/
 
-const a = 1;
+/* const a = 1;
 const b = 3;
 const c = 5;
 
@@ -182,4 +182,19 @@ let isEven = false;
 if (a % 2 == 0 || b % 2 == 0 || c % 2 == 0) {
     isEven = true;
 }
-console.log(isEven);
+console.log(isEven); */
+
+/*Exercicio 9
+Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false .
+Bonus: use somente um if  .*/
+
+const a = 6;
+const b = 4;
+const c = 2;
+
+let isOdd = false;
+
+if (a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0) {
+    isOdd = true;
+}
+console.log(isOdd);
