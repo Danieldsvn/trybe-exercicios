@@ -85,10 +85,9 @@ console.log(min); */
 
 // ! 6 - Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
 
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 //*Solução 1
-let oddCounter = 0;
+/* let oddCounter = 0;
 for (let i = 0; i < numbers.length; i += 1) {
     if ( numbers[i] % 2 !== 0 ) {
         oddCounter += 1;  
@@ -99,6 +98,20 @@ if (oddCounter !== 0) {
 } 
 else {
     console.log('nenhum valor ímpar encontrado');
-}
+} */
 
+//*Solução 2
+
+// ! 7 - Utilizando for , descubra qual o menor valor contido no array e imprima-o;
+
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+//*Solução 1
+let max = numbers[0];
+for (i of numbers) {
+    if (max < i) {
+        max = i;
+    }
+}
+console.log(max);
 //*Solução 2
