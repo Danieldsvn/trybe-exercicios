@@ -104,14 +104,24 @@ else {
 
 // ! 7 - Utilizando for , descubra qual o menor valor contido no array e imprima-o;
 
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 //*Solução 1
-let max = numbers[0];
+/* let max = numbers[0];
 for (i of numbers) {
     if (max < i) {
         max = i;
     }
 }
 console.log(max);
+//*Solução 2
+ */
+// ! 8 - Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado;
+
+
+//*Solução 1
+let array25 = [];
+for (let i = 1; i <= 25; i += 1) {
+    array25.push(i);
+}
+console.log(array25);
 //*Solução 2
