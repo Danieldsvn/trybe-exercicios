@@ -174,12 +174,11 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 //*Solução
 
 let numbers2x = [];
-for (let i = 1; i < numbers.length; i += 1) {
-    for (let j = i - 1; j < i; j += 1 ) {
-        numbers2x.push(numbers[j] * numbers[i]);
-    }
+for (let i = 0; i < numbers.length - 1; i += 1) {
+    numbers2x.push(numbers[i] * numbers[i + 1]);
 }
-numbers2x.push(numbers[numbers.length - 1] * 2);
+numbers2x.push((numbers[numbers.length -1]) * 2);
 console.log(numbers2x);
+
 
   
