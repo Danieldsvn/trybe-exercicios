@@ -56,7 +56,7 @@ for (i = 0; i <= n; i += 1) {
 // *****
 // TODO Atenção! Note que esse exercício é bem mais complexo que o anterior! Não basta, aqui, imprimir somente asteriscos. Você precisará de uma lógica para imprimir espaços também.
 
-// * Solução 1
+// * Solução 1 (ajuda do Gabriel Pondaco)
 
 /* let n = 5;
 let symbol = '*';
@@ -78,21 +78,21 @@ for(let i = 1; i <= n; i += 1) {
     array = []; */
 
 
-// * Solução 2
+// * Solução 2 
 
 let n = 5;
-
 let asterisk = '*';
 let blankCha = ' ';
-for (let i = 1; i <= n; i += 1) {    
-    let line = '';
-    for (let j = 4; j >= i; j -= 1){
+
+for (let i = 1; i <= n; i += 1) {   // imprime as "n" linhas.    
+    let line = ''; // recebe variaveis asterisk e blankCha.     
+    for (let j = 4; j >= i; j -= 1){ // armazena os caracteres vazios na variavel linha
         line = line + blankCha;
-    }
-    for ( j = 1; j <= i; j += 1){
+    }    
+    for ( j = 1; j <= i; j += 1){ // armazena os asteriscos na variavel linha
         line = line + asterisk;
-    }     
-    console.log(line);
+    }         
+    console.log(line); // Imprime cada linha das "n" linhas
 }
 
 
