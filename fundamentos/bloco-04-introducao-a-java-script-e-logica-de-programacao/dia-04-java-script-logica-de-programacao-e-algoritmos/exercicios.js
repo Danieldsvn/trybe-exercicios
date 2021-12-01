@@ -18,7 +18,7 @@
 //     console.log(line);
 // }
 
-// 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. Por exemplo:
+// ! 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. Por exemplo:
 
 // n = 5
 
@@ -28,8 +28,9 @@
 // ****
 // *****
 
-let symbol = '*';
-// let line = '';
+//* Solução 1
+/* let symbol = '*';
+
 let n = 5;
 for (let i = 1; i <= n; i += 1) {
     line = '';
@@ -38,3 +39,67 @@ for (let i = 1; i <= n; i += 1) {
     }
     console.log(line);
 }
+//* Solução 2
+let n = 5;
+let symbol = '*';
+let line = '-';
+for (i = 0; i <= n; i += 1) {
+    console.log(line);
+    line = line + symbol;
+} */
+// ! 3- Agora inverta o lado do triângulo. Por exemplo:
+// 
+//     *
+//    **
+//   ***
+//  ****
+// *****
+// TODO Atenção! Note que esse exercício é bem mais complexo que o anterior! Não basta, aqui, imprimir somente asteriscos. Você precisará de uma lógica para imprimir espaços também.
+
+// * Solução 1
+
+/* let n = 5;
+let symbol = '*';
+let line = '';
+let array = [];
+for(let i = 1; i <= n; i += 1) {
+    for( let j = 1; j <= n; j += 1) {
+        if (j > i) {
+            array.push(' ');
+        }
+        else {
+            array.push('*');
+        }
+        
+    }
+    array.reverse();
+    console.log(array.join(''));
+
+    array = []; */
+
+
+// * Solução 2
+
+let n = 5;
+
+let asterisk = '*';
+let blankCha = ' ';
+for (let i = 1; i <= n; i += 1) {    
+    let line = '';
+    for (let j = 4; j >= i; j -= 1){
+        line = line + blankCha;
+    }
+    for ( j = 1; j <= i; j += 1){
+        line = line + asterisk;
+    }     
+    console.log(line);
+}
+
+
+
+
+
+
+
+
+
