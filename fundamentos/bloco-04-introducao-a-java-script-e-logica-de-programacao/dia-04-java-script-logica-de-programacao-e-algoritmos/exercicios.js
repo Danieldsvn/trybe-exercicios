@@ -80,13 +80,13 @@ for(let i = 1; i <= n; i += 1) {
 
 // * Solução 2 
 
-let n = 5;
+let n = 13;
 let asterisk = '*';
 let blankCha = ' ';
 
 for (let i = 1; i <= n; i += 1) {   // imprime as "n" linhas.    
     let line = ''; // recebe variaveis asterisk e blankCha.     
-    for (let j = 4; j >= i; j -= 1){ // armazena os caracteres vazios na variavel linha
+    for (let j = n - 1; j >= i; j -= 1){ // armazena os caracteres vazios na variavel linha
         line = line + blankCha;
     }    
     for ( j = 1; j <= i; j += 1){ // armazena os asteriscos na variavel linha
@@ -96,9 +96,11 @@ for (let i = 1; i <= n; i += 1) {   // imprime as "n" linhas.
 }
 
 
-
-
-
+//     *
+//    **
+//   ***
+//  ****
+// *****
 
 
 
