@@ -77,7 +77,7 @@ for (let index in names){
 
 // ! 2 - Usando o objeto abaixo, utilize For/in e imprima um console.log com as chaves e valores desse objeto.
 
-let car = {
+/* let car = {
     model: 'A3 Sedan',
     manufacturer: 'Audi',
     year: 2020
@@ -85,4 +85,89 @@ let car = {
 
   for (let index in car){
       console.log(index + ': ' + car[index]);
-  }
+  } */
+
+  // PARA FIXAR  "FUNÇÕES" //
+//! FAÇA FUNÇÕES PARA CADA EXERCÍCIO ABAIXO.
+
+//  ! 1. Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas constantes, a e b , definidas no começo com os valores que serão operados. Faça programas para:
+/* // Adição (a + b)
+function soma(a, b){
+    return a + b;
+}
+// Subtração (a - b)
+function subtracao(a, b){
+    return a - b;
+}
+// Multiplicação (a * b)
+function multiplicacao(a, b){
+    return a * b;
+}
+// Divisão (a / b)
+function divisao(a, b){
+    return a / b;
+}
+// Módulo (a % b)
+function resto(a, b) {
+    return a % b;
+} */
+
+// !2. Faça um programa que retorne o maior de dois números. Defina no começo do programa duas  constantes com os valores que serão comparados.
+
+/* function maiorNumero (a, b){
+    if (a > b) {
+        return a;
+    }   
+    else if (b > a) {
+        return b;
+    }
+    else {
+        return 'números iguais';
+    }
+}
+ */
+// ! 3. Faça um programa que retorne o maior de três números. Defina no começo do programa três constantes com os valores que serão comparados.
+
+/* function MaiorDe3 (a, b, c) {
+    if (a > b && a > c) {
+        return a + ' é o maior número';
+    }
+    else if (b > a && b > c) {
+        return b +  ' é o maior número';
+    }
+    else {
+        return c + ' é o maior número';
+    }
+} */
+
+// ! 4. Faça um programa que, dado um valor definido numa constante, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
+
+/* function posNeg(a) {
+    if (a > 0){
+        return 'positive';
+    }
+    else if (a < 0){
+        return 'negative';
+    }
+    else {
+        return 'zero';
+    }
+} */
+
+// ! 5. Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro.
+
+function triAngulos(a, b, c){
+    if (a < 0 || b < 0 || c < 0) {
+        return 'angulo(os) invalidos';
+    }
+    else {
+        if ( a + b + c !== 180) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+}
+
+console.log(triAngulos(-60, 60, 60));
