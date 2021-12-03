@@ -185,11 +185,7 @@ function resto(a, b) {
 // Parte I - Objetos e For/In
 // Usando o objeto abaixo, faça os exercícios a seguir:
 
-let info = {
-  personagem: 'Margarida',
-  origem: 'Pato Donald',
-  nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
-};
+
 
 // !1 - Imprima no console uma mensagem de boas-vindas para a personagem acima, incluindo seu nome. Valor esperado no console:
 
@@ -200,7 +196,7 @@ let info = {
 // ! 2 - Insira no objeto uma nova propriedade com o nome de chave 'recorrente' e o valor 'Sim' e, em seguida, imprima o objeto no console. Valor esperado no console:
 
 
-info.recorrente = 'Sim';
+
 // console.log(info);
 
 
@@ -227,15 +223,39 @@ info.recorrente = 'Sim';
 // Namorada do personagem principal nos quadrinhos do Pato Donald
 // Sim
 
-for (let value in info) {
-    console.log(info[value]);
-}
+// for (let value in info) {
+//     console.log(info[value]);
+// }
 // ! 5 - Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: 'Tio Patinhas', 'Christmas on Bear Mountain, Dell's Four Color Comics #178', 'O último MacPatinhas', 'Sim'. Então, imprima os valores de cada objeto juntos de acordo com cada uma das chaves. Valor esperado no console:
+let info = {
+    personagem: 'Margarida',
+    origem: 'Pato Donald',
+    nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+  };
+  info.recorrente = 'Sim';
+let info2 = {
+    personagem: 'Tio Patinhas',
+    origem: "Christmas on Bear Mountain, Dell's Four Color Comics #178",
+    nota: 'O último MacPatinhas',
+    recorrente: 'Sim',
+};
+
+for (let value in info){
+    if (value === 'recorrente' && info[value] === 'Sim' && info2[value] === 'Sim'){
+        console.log("Ambos recorrentes");
+    }
+    else {
+        console.log(info[value] + ' e ' + info2[value]);
+    }
+}
+
 
 // Margarida e Tio Patinhas
 // Pato Donald e Christmas on Bear Mountain, Dell's Four Color Comics #178
 // Namorada do personagem principal nos quadrinhos do Pato Donald e O último MacPatinhas
 // Ambos recorrentes // Atenção para essa última linha!
+
+//---------------------------------------------------
 // Usando o objeto abaixo, faça os exercícios a seguir:
 
 // let leitor = {
