@@ -3,13 +3,23 @@
   <body>
     <header>
       <h2 id="page-title">Título</h2>
-      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <p class="paragrafoClass "id="paragraph">Dê uma cor para este parágrafo!</p>
       <h4 id="subtitle">Subtítulo</h4>
-      <p id="second-paragraph">Segundo parágrafo!</p>
+      <p class="paragrafoClass" id="second-paragraph">Segundo parágrafo!</p>
     </header>
     <script>
-      const paragraph = document.getElementById("paragraph");
-      paragraph.style.color = "red";
+      // const paragraph = document.getElementById("paragraph");
+      // paragraph.style.color = "red";
+
+      pageTitle = document.querySelector("#page-title");
+      pageTitle.innerText = "Topsom!";
+      document.querySelector("#second-paragraph").innerText = "O som que emana vida são topsounds.";
+      document.querySelector('#subtitle').innerHTML = 'Os top sounds...';
+      const paragrafos = document.querySelectorAll(".paragrafoClass");
+      paragrafos[0].style.color = 'green';
+      paragrafos[1].style.border = '1px solid black';
+      const subtitle = document.querySelector('h4');
+      subtitle.style.color = 'blue';
     </script>
   </body>
 </html>
