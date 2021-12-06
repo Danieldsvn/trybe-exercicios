@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    background-color: black;
   }
   
   #container {
@@ -7,10 +8,7 @@
     text-align: center;
   }
   
-  #header-container {
-    color: white;
-    padding: 20px;
-  }
+ 
   
   .emergency-tasks {
     display: inline-block;
