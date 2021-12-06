@@ -1,39 +1,83 @@
-<!-- arquivo index.html -->
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>  
-  <main id="paiDoPai">
-    <section id="pai">
-      <section id="primeiroFilho"></section>
-      <section id="elementoOndeVoceEsta">
-        <section id="primeiroFilhoDoFilho"></section>
-        <section id="segundoEUltimoFilhoDoFilho"></section>
-      </section>
-      Atenção!
-      <section id="terceiroFilho"></section>
-      <section id="quartoEUltimoFilho"></section>
-    </section>
-  </main>
-</body>
-<script>
-    const elementoOndeVoceEsta = document.getElementById("elementoOndeVoceEsta");
-    const pai = elementoOndeVoceEsta.parentElement;
-    pai.style.color = 'green';
-    document.getElementById('primeiroFilhoDoFilho').innerText = 'Um texto.';
-    const primeiroFilho = pai.firstElementChild;
-    const atencao = elementoOndeVoceEsta.nextSibling;
-    const terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
-    const terceiroFilho = pai.lastElementChild.previousElementSibling;
-    const irmaoElementoOndeVoceEsta = document.createElement('section');
-    irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
-    pai.appendChild(irmaoElementoOndeVoceEsta);
-    const outroFilho = document.createElement('section');
-</script>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+    // 1 - Adicione a tag h1 com o texto "Exercício 5.2 - JavaScript DOM" como filho da tag body ;
+      let body = document.querySelector('body');
+      let h1 = document.createElement('h1');
+      h1.innerText = ('Exercício 5.2 - JavaScript DOM');
+      body.appendChild(h1);
+    // 2 - Adicione a tag main com a classe main-content como filho da tag body ;
+        let main = document.createElement('main');
+        main.className = 'main-content';
+        body.appendChild(main);
+    // 3 - Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+        let section = document.createElement('section');
+        section.className = 'center-content';
+        main.appendChild(section);
+    // 4 - Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+        let p = document.createElement('p');
+        p.innerText = 'Qualquer texto';
+        section.appendChild(p);
+    // 5 - Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+        let sectionLeft = document.createElement('section');
+        sectionLeft.className = 'left-content';
+        main.appendChild(sectionLeft);
+    </script>
+  </body>
 </html>
