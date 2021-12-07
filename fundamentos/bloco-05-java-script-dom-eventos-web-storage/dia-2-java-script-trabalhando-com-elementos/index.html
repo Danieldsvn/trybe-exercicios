@@ -96,6 +96,12 @@
             li.innerText = arrayLi[index];
             ul.appendChild(li);
         }
+    // 9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+        for (let index = 0; index < 3; index += 1) {
+            let h3 = document.createElement('h3');
+            h3.innerText = '3 tags h3';
+            main.appendChild(h3);
+        }
     </script>
   </body>
 </html>
