@@ -51,8 +51,21 @@ input.addEventListener('input', printWhatItype);
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portifólio?
 
+myWebpage.addEventListener('dblclick', function() {
+    window.location.replace('https://danieldsvn.github.io/');
+})
+
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+function colorChanger (event) {
+    event.target.style.color = 'red';
+}
+
+myWebpage.addEventListener('mouseover', colorChanger) 
+
+myWebpage.addEventListener('mouseout', function(event) {
+    event.target.style.color = 'unset';
+});
 
 // Segue abaixo um exemplo do uso de event.target:
 
