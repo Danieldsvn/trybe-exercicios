@@ -22,33 +22,45 @@ function createDaysOfTheWeek() {
   // Escreva seu código abaixo.
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-  function dezDaysCalendar (dezDaysList) {
+  function dezDaysCalendar () {
     let days = document.getElementById('days');
     for (let i = 0; i < dezDaysList.length; i += 1){
-        let day = document.createElement('li');
-        days.appendChild(day);
-        day.className = 'day';
+        let days = document.getElementById('days');
+        let dayList = dezDaysList[i];
+        let day = document.createElement('li');            
         day.innerHTML = dezDaysList[i];
-        if (day.innerHTML === 24 || day.innerHTML === 25 || day.innerHTML === 31) {
-            day.classList.add('holiday');
-        }
-        if (day.innerHTML === 4 || day.innerHTML === 11 || day.innerHTML === 18 || day.innerHTML === 25) {
-            day.classList.add('friday');
-        }
+        if (dayList === 25) {
+            day.className = 'day holiday friday';
+            day.innerText = dayList;
+            days.appendChild(day);    
 
+        }
+        else if (dayList === 4 || dayList === 11 || dayList === 18) {
+            day.className = 'day friday';
+            day.innerText = dayList;
+            days.appendChild(day);    
+
+        }
+        else {
+            day.className = 'day';
+            day.innerText = dayList;
+            days.appendChild(day);    
+
+        }
+        
     }
   }
 
-  dezDaysCalendar(dezDaysList);
+  dezDaysCalendar();
 
 //   Exercício 2:
 // Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
 // Adicione a este botão a ID "btn-holiday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
-let holidays = 'feriados';
+let holidays = 'Feriados';
 function holidaysButton (holidays) {
     let buttonsContainer = document.querySelector('.buttons-container');
-    let button = createElement('button');
+    let button = document.createElement('button');
     button.setAttribute("id", "btn-holiday");
     button.innerHTML = holidays;
     buttonsContainer.appendChild(button);
@@ -67,3 +79,48 @@ button.addEventListener('click', function (event) {
         event.target.style.backgroundColor = 'red';
     }
 } ) ;
+
+// Exercício 4:
+// Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+// Adicione a este botão o ID "btn-friday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+let fridays = 'Sexta-feira';
+function fridaysButton (fridays) {
+    let buttonsContainer = document.querySelector('.buttons-container');
+    let button = document.createElement('button');
+    button.setAttribute("id", "btn-friday");
+    button.innerHTML = fridays;
+    buttonsContainer.appendChild(button);
+}
+fridaysButton (fridays);
+
+// Exercício 5:
+// Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+
+
+
+
+
+
+    function mudaSexta(){ 
+      let button2 = document.getElementById('btn-friday')
+      button2.addEventListener('click', function () {
+      let fridays = document.querySelectorAll('.friday');
+      for (let i = 0; i < fridays.length; i += 1) {           
+      if (  fridays[i].innerText !== 'SEXTA') {
+        fridays[i].innerHTML = 'SEXTA';        
+      }
+      else {
+        fridays[i].innerHTML = fridays[i];
+      }
+    }
+    
+} ) ;
+    };
+
+    mudaSexta();
+
+
+    
