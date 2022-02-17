@@ -24,7 +24,7 @@ const conteudos = [
   ];
   
   const conteudosHTML = conteudos.map((element) => (
-    <ul key={element.conteudo}>
+    <ul key={element.conteudo} className="conteudos">
       <h4>{`O conteúdo é: ${element.conteudo}`}</h4>
       <li>{`Status: ${element.status}`}</li>
       <li>{`Bloco: ${element.bloco}`}</li>
