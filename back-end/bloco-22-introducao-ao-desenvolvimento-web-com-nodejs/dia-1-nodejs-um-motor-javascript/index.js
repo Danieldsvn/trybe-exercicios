@@ -11,19 +11,19 @@ function calculadora() {
     case '+':
     case 'mais':
     case 'adição':
-      console.log('Resultado');
+      console.log('Resultado:');
      console.log(primeiroNumero + segundoNumero);
     break;
     case '-':
     case 'menos':
     case 'subtração':
-      console.log('Resultado');
+      console.log('Resultado:');
       console.log(primeiroNumero - segundoNumero);
       break;
     case '*':
     case 'vezes':
     case 'multiplicação':
-      console.log('Resultado');
+      console.log('Resultado:');
       console.log(primeiroNumero * segundoNumero);
       break;
     case '/':
