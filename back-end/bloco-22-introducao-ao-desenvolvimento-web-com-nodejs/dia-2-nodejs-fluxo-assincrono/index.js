@@ -1,6 +1,16 @@
 const fs = require('fs');
 
-function SimpsonsCharacter(){
+function IdValidator(id, data){
+  const promise = new Promise((resolve, reject) => {
+    const characterMatch = data.filter((character) => character.id === id);
+    if(characterMatch.length === 0)  reject(new Error('Id não encontrado'));
+    resolve(characterMatch);
+  })
+  return promise;
+}
+
+
+function SimpsonsCharacter(idMatch){
   fs.readFile("./simpsons.json", 'utf-8', function(err, data){
     if(err){
       console.log('Não foi possível ler o arquivo');
@@ -12,23 +22,25 @@ function SimpsonsCharacter(){
         `${character.id} - ${character.name}`
       ));
       console.log(simpsonsArray);
+      IdValidator(idMatch, simpsonsData)
+        .then(result => console.log(result))
+        .catch(err => console.log(`Erro: ${err}`));
     } catch(err) {
       console.log(`Erro: ${err}`);
     }
   });
 };
 
-async function main() {
+async function main(idMatch) {
   try {
-    const result = await SimpsonsCharacter();    
+    const result = await SimpsonsCharacter(idMatch);    
     console.log(result);
   } catch(err) {
     console.log(`Erro: ${err}`)
   }
 };
 
-main();
-
+main('11');
 
 
 function soma (num1, num2, num3) {
