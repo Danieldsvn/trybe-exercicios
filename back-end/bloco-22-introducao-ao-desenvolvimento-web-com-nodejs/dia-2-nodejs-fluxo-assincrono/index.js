@@ -1,4 +1,6 @@
-const fs = require('fs');
+//const fsSinc = require('fs'); // síncrono
+const fsAsinc = require('fs').promises; //assíncrono
+
 
 function IdValidator(id, data){
   const promise = new Promise((resolve, reject) => {
@@ -9,14 +11,38 @@ function IdValidator(id, data){
   return promise;
 }
 
+// function removeCharactersByIi(...id) {
 
-function SimpsonsCharacter(idMatch){
-  fs.readFile("./simpsons.json", 'utf-8', function(err, data){
-    if(err){
-      console.log('Não foi possível ler o arquivo');
-      return false;
-    } 
-    try {
+// }
+// leitura de arquivo síncrona
+// function SimpsonsCharacterSinc(idMatch){
+//   fsSinc.readFile("./simpsons.json", 'utf-8', function(err, data){
+//     if(err){
+//       console.log('Não foi possível ler o arquivo');
+//       return false;
+//     } 
+//     try {
+//       const simpsonsData = JSON.parse(data);
+//       const simpsonsArray = simpsonsData.map((character) => (
+//         `${character.id} - ${character.name}`
+//       ));
+//       console.log(simpsonsArray);
+//       IdValidator(idMatch, simpsonsData)
+//         .then(result => console.log(result))
+//         .catch(err => console.log(`Erro: ${err}`));
+//     } catch(err) {
+//       console.log(`Erro: ${err}`);
+//     }
+//   });
+// };
+
+// SimpsonsCharacterSinc('10');
+
+// leitura de arquivo assíncrona com .then
+const simpsonsJson = './simpsons.json';
+function SimpsonsCharacterAsincThen(idMatch){
+  fsAsinc.readFile(simpsonsJson, 'utf-8')
+    .then((data) => {
       const simpsonsData = JSON.parse(data);
       const simpsonsArray = simpsonsData.map((character) => (
         `${character.id} - ${character.name}`
@@ -25,22 +51,27 @@ function SimpsonsCharacter(idMatch){
       IdValidator(idMatch, simpsonsData)
         .then(result => console.log(result))
         .catch(err => console.log(`Erro: ${err}`));
-    } catch(err) {
+    })
+    .catch((err) => {
       console.log(`Erro: ${err}`);
-    }
-  });
+      console.error(`Não foi possível ler o arquivo ${simpsonsJson} \n Erro: ${err}`)
+    })  
 };
 
-async function main(idMatch) {
-  try {
-    const result = await SimpsonsCharacter(idMatch);    
-    console.log(result);
-  } catch(err) {
-    console.log(`Erro: ${err}`)
-  }
-};
+SimpsonsCharacterAsincThen('11');
 
-main('11');
+
+
+// async function main(idMatch) {
+//   try {
+//     const result = await SimpsonsCharacter(idMatch);    
+//     console.log(result);
+//   } catch(err) {
+//     console.log(`Erro: ${err}`)
+//   }
+// };
+
+// main('10');
 
 
 function soma (num1, num2, num3) {
