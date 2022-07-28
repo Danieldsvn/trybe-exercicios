@@ -13,12 +13,21 @@ function soma (num1, num2, num3) {
 
 // Consumindo promise com .then
 
-const numeroAleatorio = () => Math.floor(Math.random() * 100 + 1);
-soma(numeroAleatorio(),numeroAleatorio(), numeroAleatorio())
-  .then(result => console.log(result))
-  .catch(err => console.log("Erro:", err.message))
+const numeroAleatorio = () => Math.floor(Math.random() * 10 + 1);
+// soma(numeroAleatorio(),numeroAleatorio(), numeroAleatorio())
+//   .then(result => console.log(result))
+//   .catch(err => console.log("Erro:", err.message))
 
 // consumindo promise com async await
 
+async function main(){
+  try {
+    const result = await soma(numeroAleatorio(),numeroAleatorio(), numeroAleatorio());
+    console.log(result);
+  } catch(err) {
+    console.log(`${err}`);    
+  }  
+}
 
+main();
 
