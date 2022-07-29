@@ -1,6 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 const numberSide = require('./numberSide');
+const fs = require('fs');
 
 describe('Testa função que retorna mensagem se número é positivo, negativo ou neutro', () => {
   it('Verifica se a resposta: "o valor deve ser um número" quando entrada não é tipo "number"', () => {
@@ -28,9 +29,24 @@ describe('Testa função que retorna mensagem se número é positivo, negativo o
 
 //! EXERCÍCIO 4---------------------------------------------------------------
 
-describe.only('Testa a escrita em um arquivo', () => {
-  it('O arquivo existe', () => {
 
+
+const escreveArquivo = require('./file1');
+
+describe.only('Testa uma função que escreve um arquivo e o retorno é "ok"', () => {
+  before(() => {
+    sinon.stub(fs, 'writeFileSync');
   });
-  it('Escreve no arquivo e verifica se os dados estão corretos')
+
+  after(() => {
+    fs.writeFileSync.restore();
+  });
+  it('O retorno é uma string', () => {
+    const resposta = escreveArquivo();
+    expect(resposta).to.be.a('string')
+  });
+  it('O retorno é "ok"', () => {
+    const resposta = escreveArquivo();
+    expect(resposta).to.equal('ok');
+  })
 });
