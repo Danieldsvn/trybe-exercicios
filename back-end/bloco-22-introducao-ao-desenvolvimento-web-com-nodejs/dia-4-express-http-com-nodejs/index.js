@@ -9,7 +9,13 @@ app.get('/', (request, response) => {
 })
 
 app.get('/ping', (request, response) => {
-  return response.json({ message: 'pong'});
+  return response.status(200).json({ message: 'pong'});
+})
+
+app.post('/hello', (request, response) => {
+  const { name } =  request.body;
+  request.json(nameJson);
+  return response.status(200).json( { "message": `"Hello, ${name}` });
 })
 
 app.listen(3001, () => {
