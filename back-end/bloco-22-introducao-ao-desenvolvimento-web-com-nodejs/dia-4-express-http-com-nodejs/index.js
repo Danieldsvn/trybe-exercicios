@@ -34,5 +34,5 @@ app.put('/users/:name/:age', (request, response) => {
 })
 
 app.listen(3001, () => {
-  console.log('Aplicação ouvindo na porta 3001');
+  console.log('Aplicação ouvindo na porta 3001 ');
 })
