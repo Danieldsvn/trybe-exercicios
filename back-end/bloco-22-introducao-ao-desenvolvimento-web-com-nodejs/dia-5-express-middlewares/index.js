@@ -22,4 +22,22 @@ app.post('/sales', (request, response) => {
   return response.status(201).json({ message: "Venda cadastrada com sucesso"});
 })
 
+function TokenGenerator() {
+  let token = '';
+  var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let index = 0; index < 27; index += 1) {
+      token += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+  }
+  return token;
+}
+
+app.post('/signup', (response, request) => {
+  const { email, password, firstName, phone } = request.user;
+  if(!email || !password || !firstName || phone) {
+    return response(401).json({ message: 'missing fields'});
+  }
+  const randomToken = TokenGenerator();
+  return response.status(200).json({ token: randomToken })
+})
+
 app.listen(3001, () => console.log("Ouvindo porta 3001"));
