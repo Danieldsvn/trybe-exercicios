@@ -32,9 +32,16 @@ const getAll = async () => {
   return users.map(serialize);
 }
 
+const getById = async (id) => {
+  const [user] = await connection.execute('SELECT id, first_name, last_name, email, password FROM users WHERE id = ?', [id]);
+
+  return user.map(serialize);
+}
+
 module.exports = {
   existData,
   isPasswordValid,
   create,
   getAll,
+  getById,
 }

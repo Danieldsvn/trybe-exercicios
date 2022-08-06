@@ -66,4 +66,18 @@ app.post('/user', rescue(async (request, response) => {
   return response.status(201).json(request.body);
 }));
 
+app.get('/user', rescue(async (request, response) => {
+  const users = await User.getAll();
+  return response.status(200).json(users);
+}));
+
+app.get('/user/:id', rescue(async (request, response) => {
+  const { id } = request.params;
+  const user =  await User.getById(id);
+  if(user.length === 0) return response.status(404).json({ message: 'User not Found'});
+  return response.status(200).json(user);
+}))
+
+
+
 app.listen(port, () => console.log(`Listening to the port ${port}`));
