@@ -1,5 +1,7 @@
 const connection = require('./connection');
 
+const Book = require('../services/Book');
+
 const serialize = (bookData) => {
   return {
     id: bookData.id,
