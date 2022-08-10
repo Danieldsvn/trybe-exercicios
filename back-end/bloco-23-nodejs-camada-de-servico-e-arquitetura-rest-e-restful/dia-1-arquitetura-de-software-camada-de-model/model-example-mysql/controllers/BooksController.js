@@ -7,7 +7,7 @@ const getAll = async (request, response) => {
 };
 
 
-const getById = async (request, response) => {
+const getById = async (request, response, next) => {
   const { id } = request.params;
   const book = await Book.getById(id);  
   
@@ -16,7 +16,7 @@ const getById = async (request, response) => {
   return response.status(200).json(book);
 };
 
-const getByAuthorId = async (request, response) => {
+const getByAuthorId = async (request, response, next) => {
   const { authorId } = request.params;
   const book = await Book.getByAuthorId(authorId);  
 
@@ -25,7 +25,7 @@ const getByAuthorId = async (request, response) => {
   return response.status(200).json(book);
 };
 
-const create = async (request, response) => {
+const create = async (request, response, next) => {
   const { title, author_id } = request.body;
   const book = await Book.create(title, author_id);
   if(book.error) return response.status(book.error.code).json( {message: book.error.message});
