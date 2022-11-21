@@ -2,6 +2,8 @@ class Person {
     constructor(name, birthDate) {
         this.name = name;
         this.birthDate = birthDate;
+        this.personName = name;
+        this.birthday = birthDate;
     }
     get personName() {
         return this.name;
@@ -17,10 +19,9 @@ class Person {
         return Math.floor(((((miliseconds / 1000) / 60) / 60) / 24) / 365);
     }
     set birthday(value) {
-        const currentTime = Date.now();
-        const valueTime = value.getMilliseconds();
+        const currentTime = new Date().getTime();
+        const valueTime = value.getTime();
         const age = this.ageGenerator(currentTime - valueTime);
-        console.log(age);
         if (age <= 120 && age > 0) {
             this.birthDate = value;
         }
@@ -29,7 +30,6 @@ class Person {
         }
     }
 }
-const person = new Person('Daniel', new Date(1900, 3, 3));
-console.log(person.birthday);
-const miliseconds = (new Date(1900, 3, 3)).getMilliseconds();
-console.log(person.ageGenerator(miliseconds));
+const person = new Person('Daniel', new Date('1923/03/03'));
+console.log(person.personName);
+console.log(person.birthday.toDateString());
