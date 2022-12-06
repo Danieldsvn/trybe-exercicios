@@ -1,2 +1,3 @@
 use('sample')
 // Exercício 1
+db.bios.find({ _id: 8 });
