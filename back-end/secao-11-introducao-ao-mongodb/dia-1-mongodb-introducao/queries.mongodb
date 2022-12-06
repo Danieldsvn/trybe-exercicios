@@ -24,3 +24,7 @@ db.books.countDocuments();
 // Exercício 8
 
 db.books.countDocuments({ status: "PUBLISH"});
+
+// Exercício 9
+
+db.books.find({}, { title: 1, isbn: 1, pageCount: 1, _id: 0}).limit(3);
