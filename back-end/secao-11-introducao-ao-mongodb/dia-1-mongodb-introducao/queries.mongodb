@@ -16,3 +16,7 @@ db.bios.find().limit(3).pretty();
 
 // Exercício 6
 db.bios.find().skip(5).limit(2).pretty();
+
+// Exercício 7
+
+db.books.countDocuments();
