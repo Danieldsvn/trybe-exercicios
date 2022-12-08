@@ -17,3 +17,15 @@ db.superheroes.countDocuments({
 db.superheroes.findOne({
   'aspects.height': { $gte: 200 },
 });
+
+// Exercício 6
+
+db.superheroes.countDocuments({
+  'aspects.height': { $gte: 200 },
+});
+
+// Exercício 7
+
+db.superheroes.find({
+  'aspects.eyeColor': { $eq: 'green' },
+});
