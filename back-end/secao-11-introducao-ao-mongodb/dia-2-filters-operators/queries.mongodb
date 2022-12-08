@@ -1,6 +1,7 @@
 use('filters-operators-exercicios')
 
 // Exercício 1
+
 db.superheroes.find({
   'aspects.height': { $lt: 180 },
 });
