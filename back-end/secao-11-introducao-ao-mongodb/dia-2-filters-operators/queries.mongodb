@@ -66,8 +66,17 @@ db.superheroes.countDocuments({
   'aspects.height': {$not: { $gt: 180}}
 })
 
-// Exercício 19
+// Exercício 13
 
-db.superheroes.deleteMany({
-  'publisher': 'George Lucas'
-})
+db.superheroes.find({
+  $nor: [
+    { race: 'Human'},
+    { 'aspects.height': { $gt: 180}}
+  ]
+});
+
+// // Exercício 19
+
+// db.superheroes.deleteMany({
+//   'publisher': 'George Lucas'
+// })
