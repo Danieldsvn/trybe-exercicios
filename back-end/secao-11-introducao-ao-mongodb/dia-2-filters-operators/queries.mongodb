@@ -29,3 +29,17 @@ db.superheroes.countDocuments({
 db.superheroes.find({
   'aspects.eyeColor': { $eq: 'green' },
 });
+
+// Exercício 8
+
+db.superheroes.countDocuments({
+  'aspects.eyeColor': { $eq: 'blue' },
+});
+
+// Exercício 9
+
+db.superheroes.find({
+  'aspects.hairColor': {
+    $in: [ 'black', 'No Hair']
+  }
+});
