@@ -43,3 +43,15 @@ db.superheroes.find({
     $in: [ 'black', 'No Hair']
   }
 });
+
+// Exercício 12
+
+db.superheroes.countDocuments({
+  'aspects.height': {$not: { $gt: 180}}
+})
+
+// Exercício 19
+
+db.superheroes.deleteMany({
+  'publisher': 'George Lucas'
+})
