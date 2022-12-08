@@ -1,7 +1,19 @@
 use('filters-operators-exercicios')
 
-// Exercício 1
+// Exercício 2
 
 db.superheroes.find({
   'aspects.height': { $lt: 180 },
+});
+
+// Exercício 3
+
+db.superheroes.countDocuments({
+  'aspects.height': { $lt: 180 },
+});
+
+// Exercício 4
+
+db.superheroes.findOne({
+  'aspects.height': { $gte: 200 },
 });
