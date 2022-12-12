@@ -99,3 +99,21 @@ db.movies.find(
     title: 1, ratings: 1, _id: 0
 
   })
+
+  // Exercício 6
+
+  db.movies.find({
+    ratings:{ $elemMatch: { $gt: 103 }},
+    category: { $all: ["adventure"] }
+  }, {
+    title: 1, ratings: 1, category: 1, _id: 0
+
+  })
+
+  // Exercício 7
+
+  db.movies.find({
+    category: { $size: 2 }    
+    }, {
+      title: 1, _id: 0
+  })
