@@ -85,4 +85,11 @@ db.movies.updateOne(
     lastUpdated: { $type: 'timestamp'}
   } }
 )
+
+// Exercício 11
+db.movies.updateMany({}, {  
+  $set: {
+    sequels: 0,
+  }
+})
 db.movies.find()
