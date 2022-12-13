@@ -92,4 +92,12 @@ db.movies.updateMany({}, {
     sequels: 0,
   }
 })
+
+// Exercício 12
+db.movies.updateMany({}, {  
+  $unset: {
+    budget: '',
+    estimatedBudget: '',
+  }
+})
 db.movies.find()
