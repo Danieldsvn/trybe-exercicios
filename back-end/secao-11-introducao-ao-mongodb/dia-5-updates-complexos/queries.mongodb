@@ -44,6 +44,24 @@
 //   } 
 // })
 
+// Exercício 6
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $addToSet: {
+//     category: 'action'
+//   } 
+// })
+
+// Exercício 7
+// db.movies.updateMany({
+//   title: { $in: ['Batman', 'Home Alone'] }
+// }, {
+//   $addToSet: {
+//     category: "90's"
+//   } 
+// })
+
 use('cinema');
 // db.movies.drop();
 // db.movies.insertMany([
@@ -76,12 +94,37 @@ use('cinema');
 //   },
 // ]);
 
-// Exercício 6
+// Exercício 8
+
 db.movies.updateOne({
-  title: 'Batman'
+  title: 'Home Alone'
 }, {
-  $addToSet: {
-    category: 'action'
-  } 
+  $addToSet: { cast: {
+    $each: [
+      {
+        "actor": "Macaulay Culkin",
+        "character": "Kevin"
+      },
+      {
+        "actor": "Joe Pesci",
+        "character": "Harry"
+      },
+      {
+        "actor": "Daniel Stern"
+      }
+    ]
+  }}
 })
+
+
+// Exercício 9
+db.movies.updateOne(
+  {
+    title: "Home Alone",
+    "cast.actor": "Daniel Stern",
+  },
+  {
+    $set: { "cast.$.character": "Marv" },
+  },
+);
 db.movies.find();
