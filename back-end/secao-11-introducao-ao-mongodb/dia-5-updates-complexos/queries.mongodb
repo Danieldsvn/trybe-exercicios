@@ -38,13 +38,22 @@ use('cinema');
 // })
 
 // Exercício 2
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $push: {
+//     category: {
+//       $each: ['villain', 'comic-based']
+//     }
+//   } 
+// })
+
+// Exercício 3
 db.movies.updateOne({
   title: 'Batman'
 }, {
-  $push: {
-    category: {
-      $each: ['villain', 'comic-based']
-    }
+  $pop: {
+    category: -1
   } 
 })
 db.movies.find();
