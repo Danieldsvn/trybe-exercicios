@@ -1,3 +1,49 @@
+
+// Exercício 1
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $push: { category: 'superhero'}
+// })
+
+// Exercício 2
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $push: {
+//     category: {
+//       $each: ['villain', 'comic-based']
+//     }
+//   } 
+// })
+
+// Exercício 3
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $pull: {
+//     category: -1
+//   } 
+// })
+
+// Exercício 4
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $pull: {
+//     category: 'adventure'
+//   } 
+// })
+
+// Exercício 5
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $pop: {
+//     category: 1
+//   } 
+// })
+
 use('cinema');
 // db.movies.drop();
 // db.movies.insertMany([
@@ -30,30 +76,12 @@ use('cinema');
 //   },
 // ]);
 
-// Exercício 1
-// db.movies.updateOne({
-//   title: 'Batman'
-// }, {
-//   $push: { category: 'superhero'}
-// })
-
-// Exercício 2
-// db.movies.updateOne({
-//   title: 'Batman'
-// }, {
-//   $push: {
-//     category: {
-//       $each: ['villain', 'comic-based']
-//     }
-//   } 
-// })
-
-// Exercício 3
+// Exercício 6
 db.movies.updateOne({
   title: 'Batman'
 }, {
-  $pull: {
-    category: 'adventure'
+  $addToSet: {
+    category: 'action'
   } 
 })
 db.movies.find();
