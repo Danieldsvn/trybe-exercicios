@@ -29,9 +29,22 @@ use('cinema');
 //     imdbRating: 7.4,
 //   },
 // ]);
+
+// Exercício 1
+// db.movies.updateOne({
+//   title: 'Batman'
+// }, {
+//   $push: { category: 'superhero'}
+// })
+
+// Exercício 2
 db.movies.updateOne({
   title: 'Batman'
 }, {
-  $push: { category: 'superhero'}
+  $push: {
+    category: {
+      $each: ['villain', 'comic-based']
+    }
+  } 
 })
 db.movies.find();
