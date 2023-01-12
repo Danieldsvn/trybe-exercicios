@@ -39,6 +39,16 @@ class TransferController {
       this.next(error);     
     }
   }
+
+  public async getByKey() {
+    const { key } = this.req.params;
+    try {
+      const payments = await this.service.getByKey(key);
+      return this.res.status(200).json(payments);
+    } catch (error) {
+      this.next(error);
+    }
+  }
 }
   
 export default TransferController;

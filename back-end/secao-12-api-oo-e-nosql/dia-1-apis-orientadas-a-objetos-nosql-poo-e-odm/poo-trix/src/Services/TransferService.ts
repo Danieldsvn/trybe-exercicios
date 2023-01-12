@@ -38,6 +38,12 @@ class TransferService {
     const payments = await paymentODM.getAll();
     return payments;
   }
+
+  public async getByKey(key: string) {
+    const paymentODM = new PaymentODM();
+    const payments = await paymentODM.getByKey(key);
+    return payments;
+  }
 }
 
 export default TransferService;
